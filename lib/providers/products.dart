@@ -30,8 +30,8 @@ class ProductNotifier extends StateNotifier<ProductState> {
   ProductNotifier() : super(ProductState(products: [], totalPages: 1, currentPage: 1));
 
   bool _isFetching = false;
-  final int _limit = 8; // Items per page
-  int totalPages = 1; // To store the total number of pages
+  final int _limit = 8; 
+  int totalPages = 1;
 
   Future<void> fetchProductsNumbers({int page = 1}) async {
     if (_isFetching) return;
@@ -85,11 +85,9 @@ class ProductNotifier extends StateNotifier<ProductState> {
       final List<Product> fetchedProducts =
           (response.data["products"] as List).map((item) => Product.fromJson(item)).toList();
 
-      // Update total pages if available
       final int totalProducts = response.data["total"] ?? 0;
       final int totalPages = (totalProducts / _limit).ceil();
 
-      // Append new products to the existing list
       final allProducts = [...state.products, ...fetchedProducts];
 
       state = state.copyWith(
@@ -113,7 +111,6 @@ class ProductNotifier extends StateNotifier<ProductState> {
   }
 }
 
-// Riverpod provider
 final productProvider = StateNotifierProvider<ProductNotifier, ProductState>((ref) {
   return ProductNotifier();
 });

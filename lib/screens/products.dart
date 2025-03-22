@@ -33,7 +33,7 @@ class _PaginationNumbersState extends ConsumerState<PaginationNumbers> {
       appBar: AppBar(
         title: const Text(
           'Catalogue',
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(fontWeight: FontWeight.w400),
         ),
         centerTitle: true,
         backgroundColor: Pallet.appbar,
@@ -76,14 +76,14 @@ class _PaginationNumbersState extends ConsumerState<PaginationNumbers> {
           : ListView(
               children: [
                 GridView.builder(
-                  physics: const NeverScrollableScrollPhysics(), // Disable scrolling
-                  shrinkWrap: true, // Wrap grid inside ListView
+                  physics: const NeverScrollableScrollPhysics(), 
+                  shrinkWrap: true, 
                   padding: const EdgeInsets.all(5),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2, // 2 items per row
+                    crossAxisCount: 2, 
                     crossAxisSpacing: 5,
                     mainAxisSpacing: 8,
-                    childAspectRatio: 0.6, // Aspect ratio for item size
+                    childAspectRatio: 0.6,
                   ),
                   itemCount: productState.products.length,
                   itemBuilder: (context, index) {
@@ -147,7 +147,7 @@ class _PaginationScrollState extends ConsumerState<PaginationScroll> {
       appBar: AppBar(
         title: const Text(
           'Catalogue',
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(fontWeight: FontWeight.w400),
         ),
         centerTitle: true,
         backgroundColor: Pallet.appbar,
@@ -169,7 +169,7 @@ class _PaginationScrollState extends ConsumerState<PaginationScroll> {
                     ),
                     if (cartState.count > 0)
                       Transform.translate(
-                          offset: Offset(15, -5), //
+                          offset: Offset(15, -5), 
                           child: Container(
                               width: 16,
                               height: 16,
@@ -189,14 +189,12 @@ class _PaginationScrollState extends ConsumerState<PaginationScroll> {
           ? const Center(child: CircularProgressIndicator())
           : GridView.builder(
               controller: _scrollController,
-              // physics: const NeverScrollableScrollPhysics(), // Disable scrolling
-              // shrinkWrap: true, // Wrap grid inside ListView
               padding: const EdgeInsets.all(5),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2, // 2 items per row
+                crossAxisCount: 2, 
                 crossAxisSpacing: 5,
                 mainAxisSpacing: 8,
-                childAspectRatio: 0.6, // Aspect ratio for item size
+                childAspectRatio: 0.6, 
               ),
               itemCount: productState.products.length,
               itemBuilder: (context, index) {

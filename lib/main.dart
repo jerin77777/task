@@ -35,7 +35,7 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           'Pagination Variants',
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(fontWeight: FontWeight.w500),
         ),
         centerTitle: true,
         backgroundColor: Pallet.appbar,
@@ -78,7 +78,7 @@ class Home extends StatelessWidget {
               child: Center(
                 child: Text(
                   'Pagination Numbers',
-                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500),
+                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.w400),
                 ),
               ),
               style: ElevatedButton.styleFrom(
@@ -91,7 +91,6 @@ class Home extends StatelessWidget {
                   minimumSize: const Size(180, 40),
                   maximumSize: const Size(180, 40)),
             ),
-            // PaginationNumbers(),
           ],
         ),
       ),

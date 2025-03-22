@@ -22,7 +22,7 @@ class CartScreen extends ConsumerWidget {
             child: Icon(Icons.arrow_back)),
         title: const Text(
           'Cart',
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(fontWeight: FontWeight.w400),
         ),
         centerTitle: true,
         backgroundColor: Pallet.appbar,
@@ -66,14 +66,15 @@ class CartScreen extends ConsumerWidget {
                               item.product.name,
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
-                              style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
+                              style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 16.5),
                             ),
-                            SizedBox(height: 2),
+                            SizedBox(height: 1),
                             Text(
                               item.product.brand,
                               maxLines: 1,
                               style: const TextStyle(fontSize: 14),
                             ),
+                            SizedBox(height: 1),
                             Row(
                               children: [
                                 Text(
@@ -109,7 +110,7 @@ class CartScreen extends ConsumerWidget {
                                     style: TextStyle(
                                       fontWeight: FontWeight.w400,
                                       color: Pallet.theme,
-                                      fontSize: 13.5,
+                                      fontSize: 13.2,
                                     ),
                                   ),
                                 ],
@@ -137,12 +138,12 @@ class CartScreen extends ConsumerWidget {
                                           child: Center(child: Icon(Icons.remove, size: 18)),
                                         ),
                                       ),
-                                      SizedBox(width: 5),
+                                      SizedBox(width: 6),
                                       Text(
                                         item.qty.toString(),
-                                        style: TextStyle(color: Pallet.theme, fontWeight: FontWeight.w600),
+                                        style: TextStyle(color: Pallet.theme, fontWeight: FontWeight.w600, fontSize: 12.5),
                                       ),
-                                      SizedBox(width: 5),
+                                      SizedBox(width: 6),
                                       GestureDetector(
                                         onTap: () {
                                           ref.read(cartProvider.notifier).addItem(item.product);
@@ -216,7 +217,7 @@ class CartScreen extends ConsumerWidget {
                   ),
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8), // Set border radius here
+                        borderRadius: BorderRadius.circular(8), 
                       ),
                       padding: EdgeInsets.symmetric(horizontal: 20),
                       backgroundColor: Pallet.theme,
@@ -229,7 +230,6 @@ class CartScreen extends ConsumerWidget {
           ),
         ],
       ),
-      // bottomNavigationBar:
     );
   }
 }
